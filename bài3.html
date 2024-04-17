@@ -1,0 +1,380 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title>My Profile</title>
+	</head>
+  <style>
+    body{
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 20px 0;
+  background-color: #16a085;
+  display: flex;
+}
+/* 
+p{
+  padding: 0 10px;
+  margin-bottom: 20px;
+  text-align: justify;
+} */
+
+.text-content{
+  padding: 0 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.img-container {
+  background-color: white;
+  padding: 4px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.title-container{
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title-container h1, .title-container h2{
+  color: white;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.title-container h2{
+  font-size: 18px;
+  
+  color: #fafafa;
+  margin-top: 10px;
+}
+
+.img, .avatar{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.container{
+  padding: 20px;
+  background-color: #e9e9e9;
+  display: flex;
+
+}
+
+.sider, .content{
+   background-color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.sider {
+  width: calc(40% - 20px);
+  margin-right: 20px;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.tag-fill{
+  background-color: #16a085;
+  padding: 8px 20px;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.tag-content {
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.tag-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tag-content ul li {
+  list-style-type: none;
+  padding: 8px 0
+}
+
+.progress-container {
+  width: 80%;
+}
+
+.progress-title{
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-wrap{
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.progress{
+  width: 50%;
+  height: 10px;
+  background-color: #16a085;
+}
+
+.tag{
+  font-size: 18px;
+  color: #212121;
+  padding: 10px 20px;
+  border-left: 18px solid #16a085;
+  margin-bottom: 20px;
+}
+
+.tabbar-title{
+  display: flex;
+  
+  
+}
+
+.tabbar-title .text-content {
+  font-weight: 600;
+  color: #16a085;
+}
+
+.content ul {
+  padding: 0;
+}
+
+.content ul li {
+  list-style-type: none;
+}
+
+.text-date {
+  padding: 0 20px;
+  color: #16a085;
+  font-style: italic;
+}
+
+.description-content h3{
+  padding: 0 20px;
+  margin-bottom: 8px;
+}
+
+.description-content ul {
+  padding-left: 40px ;
+}
+
+.description-content ul li{
+  text-align: justify;
+  list-style-type: none
+}
+
+.description-content ul li ul li{
+  text-align: justify;
+  list-style-type: square;
+  margin-bottom: 16px;
+}
+  </style>
+	<body>
+		<header>
+			<div class="img-container">
+				<img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/428702440_1549123429207610_9124848114580990255_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGIikFt9fDhwlXHT_uVXJ7Ro4iRdQKH41GjiJF1AofjUReO6R-vmIc1zbd6cFKHtYQION7UCPZZ3DfWR3HYK2ef&_nc_ohc=4cYRk6_7ZWEAb5yfrHW&_nc_ht=scontent.fhan2-3.fna&oh=00_AfCROxnirO__Du_3b2XzTBy0CtvqlXGWFTB7M8uWmDmUNw&oe=6625C640" alt="" class="img avatar" />
+			</div>
+			<div class="title-container">
+				<h1>Nguyễn Sỹ Duy </h1>
+				<h2>Sinh viên Ptit</h2>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="sider">
+				<div class="sider-content">
+					<h1 class="tag-fill">Thông tin cá nhân </h1>
+					<div class="tag-content">
+						<ul>
+							<li>Tên:Nguyễn Sỹ Duy </li>
+							<li>Tuổi:18</li>
+							<li>Địa chỉ: Hải Dương</li>
+							<li>Phone:0354827766</li>
+							<li>Email:Nguyensyduy05@gmail.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sider-content">
+					<h1 class="tag-fill">Skill</h1>
+					<div class="tag-content progress-container">
+						<p class="progress-title">Python</p>
+						<div class="progress-wrap">
+							<div class="progress" style="width: 80%"></div>
+						</div>
+					</div>
+					<div class="tag-content progress-container">
+						<p class="progress-title">Java Scripts</p>
+						<div class="progress-wrap">
+							<div class="progress" style="width: 65%"></div>
+						</div>
+					</div>
+					<div class="tag-content progress-container">
+						<p class="progress-title">HTML</p>
+						<div class="progress-wrap">
+							<div class="progress" style="width: 70%"></div>
+						</div>
+					</div>
+					<div class="tag-content progress-container">
+						<p class="progress-title">CSS</p>
+						<div class="progress-wrap">
+							<div class="progress" style="width: 30%"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sider-content">
+					
+				</div>
+			</div>
+			<div class="content">
+				<div>
+					<h1 class="tag">Giới thiệu</h1>
+					<p class="text-content">
+						Tôi là Nguyễn Sỹ Duy, một sinh viên đam mê công nghệ thông tin và đang theo đuổi học vấn tại Học Viện Công Nghệ Bưu Chính Viễn Thông .
+                        Với niềm đam mê sâu sắc đối với lập trình và sự tò mò không ngừng, tôi đang tìm kiếm cơ hội để tham gia vào môi trường thực tế và phát triển
+                        kỹ năng của mình.Trong suốt thời gian học tập, tôi đã tích luỹ được kiến thức vững chắc về một số các ngôn ngữ lập trình như Python ; JS ; HTML;CSS ,
+                        cùng với kỹ năng phối hợp làm việc nhóm .
+					</p>
+				</div>
+				<div class="description-content">
+					<h1 class="tag">Trình độ học vấn và kinh nghiệm  </h1>
+					<ul>
+						<li>
+							<div class="tabbar-title">
+								<p class="text-content">Tiểu học </p>
+								<p class="text-date">2011 - 2015</p>
+                                
+							</div>
+                            <div class="tabbar-title">
+								<p class="text-content">THCS </p>
+								<p class="text-date">2015 - 2020</p>   
+							</div>
+                            <div class="tabbar-title">
+								<p class="text-content">THPT </p>
+								<p class="text-date">2020 - 2023</p>   
+							</div>
+                            <div class="tabbar-title">
+								<p class="text-content">Đại Học </p>
+								<p class="text-date">2023 - Nay </p>   
+							</div>
+							
+							<ul>
+								<li>
+									Trong thời gian học tiểu học, tôi đã học được sự quan trọng của việc xây dựng nền tảng giáo dục vững chắc. 
+                                    Đây là giai đoạn mà tôi đã hình thành những kỹ năng cơ bản như đọc, viết và tính toán, 
+                                    cùng với việc phát triển kỹ năng giao tiếp và làm việc nhóm thông qua các hoạt động ngoại khóa 
+								</li>
+								<li>
+									Trong những năm học trung học cơ sở và phổ thông, tôi đã trải qua những thách thức và cơ hội mới. 
+                                    Đây là thời kỳ quan trọng để hiểu rõ bản thân và phát triển kỹ năng tự học, quản lý thời gian và tư duy logic. 
+                                    Tôi cũng đã tham gia vào các hoạt động ngoại khóa như câu lạc bộ, đội nhóm thể thao 
+								</li>
+								<li>
+									Những năm học đại học đánh dấu bước ngoặt quan trọng trong sự nghiệp giáo dục của tôi. 
+                                    Tại đây, tôi đã có cơ hội tiếp cận với kiến thức chuyên sâu trong lĩnh vực công nghệ thông tin và phát triển kỹ năng lập trình,
+                                     giúp tôi chuẩn bị cho sự nghiệp sau này. Ngoài ra, tôi cũng đã tham gia vào các dự án nghiên cứu,
+                                     thực hành và các khóa học bổ sung để mở rộng kiến thức và kỹ năng của mình.
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="description-content">
+					<h1 class="tag">Điểm mạnh - Điểm Yếu -Kỹ Năng </h1>
+					<ul>
+						<li>
+							
+							<h3>Điểm Mạnh </h3>
+
+							<ul>
+								<li>
+									Có tính kiên nhẫn và sự bình tĩnh khi gặp khó khăn . 
+								</li>
+								<li>
+									Tôi luôn chú ý đến chi tiết và thực hiện mọi công việc một cách cẩn thận. Tính cẩn thận giúp tôi đảm bảo rằng công việc được hoàn thành chính xác.
+								</li>
+								<li>
+									Biết lắng nghe và học hỏi , cởi mở thân thiện với mọi người và có chút khiếu hài.
+								</li>
+								<li>
+									Có kinh nghiệm làm việc nhóm và thái độ tốt .Tuy nhiên kỹ năng chuyên môn còn ở mức cơ bản nên sẽ chăm chỉ trau dồi hơn 
+								</li>
+							</ul>
+                            <h3>Điểm Yếu </h3>
+
+							<ul>
+								<li>
+									Đôi khi tôi gặp khó khăn trong việc quản lý thời gian hiệu quả, đặc biệt khi đối mặt với nhiều công việc cùng một lúc.
+								</li>
+								<li>
+									Mặc dù tôi đã có kiến thức cơ bản về tiếng Anh, nhưng đôi khi tôi cảm thấy không tự tin khi giao tiếp bằng tiếng Anh trong các tình huống
+								</li>                
+					
+							</ul>
+							<h3>Kỹ Năng </h3>
+
+                                <ul>
+                                    <li>
+                                       Kỹ năng lập trình thành thạo với ngôn ngữ Python
+                                    </li>
+                                    <li>
+                                        Kỹ năng cơ bản lập trình Web Front end
+                                    </li>
+                                    <li>
+                                        Biết sử dụng một số công cụ chỉnh sửa ảnh (capcut, canva)
+                                    </li>    
+				
+								</div>
+								<div class="description-content">
+									<h1 class="tag">Link một số dự án đã từng thực hiện </h1>
+									<ul>
+										<li>
+											<ul>
+												<li>
+													
+													<a href="https://github.com/rodrygoduy/RIPT1302-TH-01-B23DCCC050-Bai01">Đồng Hồ</a>
+
+												</li>
+												
+												<li>
+													
+													<a href="https://github.com/rodrygoduy/-RIPT1301-02-TH-01-B23DCCC050-Bai-02">Đăng nhập </a>
+
+												</li>
+												
+											</ul></div>
+		</div>
+	</body>
+</html>

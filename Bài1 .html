@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính </title>
+    
+</head>
+<style>
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; 
+    font-size: 1.23em; 
+    display : inline ;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://vienkientrucquocgia.gov.vn/wp-content/uploads/2020/12/Anh-8-MNPB.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items : center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.box{
+    background-color : white ;
+    padding : 20px ;
+    border-radius:10px; 
+    box-shadow : 0 0 10px black ;    }
+    
+.input{
+    margin-bottom : 10px;
+}
+.button {
+    background-color : green ;
+    color : white ; 
+    padding : 5px 10px ;
+    text-align : center;
+    text-decoration : none ;
+    display : inline-block ;
+    font-size:16px;
+    border-radius : 5px ;
+    cursor : pointer ;
+}
+</style>
+
+
+<body>
+    <div class = "box">
+    <div class ="input" >
+    <p>Mời bạn nhập vào số thứ nhất : </p>
+    <input type="text" value="" id="sothunhat"></div>
+    <div class = "input" >
+
+    <p> Mời bạn nhập vào số thứ hai :   </p>
+    <input type="text" value="" id="sothuhai"></div>
+  
+    <button class ="button" onclick="tinhtong()">SUM</button>
+    <button class ="button" onclick="tinhhieu()">SUBTRACT</button>
+    <button class ="button" onclick="tinhtich()">MULTIPLY</button>
+    <button class ="button" onclick="tinhchia()">DIVIDE</button>
+    <button class ="button" onclick="reset()">RESET</button>
+        
+    </div>
+
+<script>
+    function checkType(a) {
+        var input = document.getElementById(a);
+        var value = input.value.trim();
+        var check = !isNaN(value) && value !== '';
+        if (!check) {
+            alert("Giá trị nhập vào không đúng định dạng. Vui lòng nhập lại!");
+            input.value = "";
+        }
+        return check;
+    }
+
+    function tinhtong() {
+        if (!checkType("sothunhat") || !checkType("sothuhai")) return;
+        
+        var s1 = parseFloat(document.getElementById("sothunhat").value);
+        var s2 = parseFloat(document.getElementById("sothuhai").value);
+        var tong = s1 + s2;
+        alert("Tổng của hai số là : " + tong);
+    }
+
+    function tinhhieu() {
+        if (!checkType("sothunhat") || !checkType("sothuhai")) return;
+        
+        var s1 = parseFloat(document.getElementById("sothunhat").value);
+        var s2 = parseFloat(document.getElementById("sothuhai").value);
+        var hieu = s1 - s2;
+        alert("Hiệu của hai số là : " + hieu);
+    }
+
+    function tinhtich() {
+        if (!checkType("sothunhat") || !checkType("sothuhai")) return;
+        
+        var s1 = parseFloat(document.getElementById("sothunhat").value);
+        var s2 = parseFloat(document.getElementById("sothuhai").value);
+        var tich = s1 * s2;
+        alert("Tích của hai số là : " + tich);
+    }
+
+    function tinhchia() {
+        if (!checkType("sothunhat") || !checkType("sothuhai")) return;
+        
+        var s1 = parseFloat(document.getElementById("sothunhat").value);
+        var s2 = parseFloat(document.getElementById("sothuhai").value);
+        
+        if (s2 === 0) {
+            alert("Số 0 không thể thực hiện phép chia.");
+            return;
+        }
+        
+        var chia = s1 / s2;
+        alert("Thương của hai số là : " + chia);
+    }
+
+    function reset() {
+        document.getElementById("sothunhat").value = "";
+        document.getElementById("sothuhai").value = "";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đồng hồ báo thức</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('https://images.wallpaperscraft.com/image/single/planet_galaxy_universe_121293_3840x2160.jpg');
+      background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: rgb(41, 41, 207);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px black;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      font-size: 18px;
+    }
+
+    .input-group input {
+      width: 50px;
+      padding: 5px;
+      margin: 0 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+    }
+
+    .btn-group {
+      margin-bottom: 20px;
+    }
+
+    .btn-group button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-group button:hover {
+      background-color: #0056b3;
+    }
+
+    .alert {
+      display: none;
+      background-color: #dc3545;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Đồng hồ báo thức</div>
+    
+    <div class="input-group">
+      <label for="minutes">Số Phút:</label>
+      <input type="number" id="minutes" min="0">
+      <label for="seconds">Số Giây:</label>
+      <input type="number" id="seconds" min="0" max="59">
+    </div>
+
+    <div class="btn-group">
+      <button onclick="startCountdown()">Bắt đầu</button>
+      <button onclick="resetCountdown()">Reset</button>
+    </div>
+
+    <div class="alert" id="alertMessage"></div>
+    <div id="timer" class="alert"></div>
+    
+    <audio id="alarmSound" src="D:\java scripts & HTML\Giữa kì\sound.MP3"></audio>
+  </div>
+
+  <script>
+    let timer;
+    let minutesInput = document.getElementById('minutes');
+    let secondsInput = document.getElementById('seconds');
+    let timerDisplay = document.getElementById('timer');
+    let alertMessage = document.getElementById('alertMessage');
+    let audio = document.getElementById('alarmSound');
+    let audioPlay = true;
+    let countdownRunning = false;
+
+    function startCountdown() {
+      if (countdownRunning) {
+        clearInterval(timer);
+        countdownRunning = false;
+      }
+
+      if (audioPlay) {
+        audio.pause();
+        audio.currentTime = 0;
+        audioPlay = false;
+      }
+
+      let minutes = parseInt(minutesInput.value);
+      let seconds = parseInt(secondsInput.value);
+      let totalSeconds = minutes * 60 + seconds;
+
+      if (isNaN(totalSeconds) || totalSeconds <= 0) {
+        alertMessage.textContent = 'Vui lòng nhập đầy đủ số phút và giây hợp lệ, nhỏ nhất 0 phút và 0 giây.';
+        alertMessage.style.display = 'block';
+        return;
+      }
+
+      alertMessage.style.display = 'none';
+
+      timer = setInterval(function() {
+        totalSeconds--;
+        if (totalSeconds < 0) {
+          clearInterval(timer);
+          audio.play();
+          audioPlay = true;
+          alertMessage.textContent = 'Đã hết thời gian đếm ngược!!!';
+          alertMessage.style.display = 'block';
+          return;
+        }
+
+        let displayMinutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+        let displaySeconds = (totalSeconds % 60).toString().padStart(2, '0');
+        timerDisplay.textContent = `${displayMinutes}:${displaySeconds}`;
+      }, 1000);
+
+      timerDisplay.style.display = 'block';
+      countdownRunning = true;
+    }
+
+    function resetCountdown() {
+      clearInterval(timer);
+      minutesInput.value = '';
+      secondsInput.value = '';
+      timerDisplay.textContent = '';
+      timerDisplay.style.display = 'none';
+      alertMessage.style.display = 'none';
+      countdownRunning = false;
+      audio.pause();
+      audio.currentTime = 0;
+      audioPlay = false;
+    }
+  </script>
+</body>
+</html>
